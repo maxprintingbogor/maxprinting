@@ -6,11 +6,19 @@
     <title>Max Printing Digital Printshop: Jasa Percetakan Digital Terbaik, Cepat & Murah | Kartu, Banner, Flyer</title>
     <meta name="description" content="Max Printing Digital Printshop menyediakan jasa percetakan digital cepat, berkualitas, dan murah di Bogor. Cetak kartu nama, ID Card, banner, flyer, dan custom merchandise. Layanan online dan offline tersedia.">
     
-    <link rel="icon" type="image/png" href="./assets/images.png" />
+    <link rel="icon" type="image/png" href="./assets/icon MAX 2025.png" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        /*
+        |--------------------------------------------------------------------------
+        | CUSTOM CSS UNTUK MAX PRINTING
+        |--------------------------------------------------------------------------
+        | File ini berisi semua gaya kustom yang melengkapi framework Tailwind CSS.
+        */
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6; /* Abu-abu terang */
@@ -23,8 +31,8 @@
             height: 2.25rem; /* Tinggi 9 sesuai Tailwind */
             width: auto;
         }
-        
-        /* Style untuk Carousel */
+
+        /* -------------------- Carousel Styles -------------------- */
         .slide {
             transition: opacity 0.5s ease-in-out;
             opacity: 0;
@@ -38,7 +46,8 @@
             opacity: 1;
             position: relative;
         }
-        /* Style untuk kartu produk gaya Polaroid yang lebih besar */
+
+        /* -------------------- Product Card Styles -------------------- */
         .product-card-polaroid {
             background-color: #fff;
             padding: 1rem; /* Padding di sekitar konten */
@@ -62,7 +71,8 @@
                 height: 14rem; /* sm:h-56 */
             }
         }
-        /* Style untuk Partner box */
+
+        /* -------------------- Partner Section Styles -------------------- */
         .partner-box {
             background-color: #fff; 
             border: 1px solid #e5e7eb; 
@@ -94,6 +104,8 @@
             filter: grayscale(0%); /* Mengembalikan warna saat hover */
             opacity: 1;
         }
+
+        /* -------------------- Map and Utility Styles -------------------- */
         /* Style untuk iFrame peta */
         #map-container iframe {
             width: 100%;
@@ -101,7 +113,7 @@
             border-radius: 0.75rem;
             border: 0; /* Menghilangkan border default iframe */
         }
-        /* CSS untuk menyembunyikan kategori/produk saat tidak ada hasil */
+        /* CSS untuk menyembunyikan kategori/produk saat tidak ada hasil pencarian */
         .hidden-category {
             display: none !important;
         }
@@ -109,7 +121,7 @@
             display: none !important;
         }
 
-        /* --- Style Modal Produk --- */
+        /* -------------------- Modal Product Styles -------------------- */
         .modal {
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
             visibility: hidden;
@@ -147,14 +159,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="flex-shrink-0 flex items-center h-9" aria-label="Max Printing Digital Printshop Home">
-                    <img src="./assets/images.png" alt="Logo Max Printing Digital Printshop" 
+                    <img src="./assets/Logo MAX 2025.png" alt="Logo Max Printing Digital Printshop" 
                          class="header-logo" 
                          onerror="this.onerror=null; this.src='https://placehold.co/150x36/111827/ffffff?text=Max+Printing+Logo'; this.classList.add('w-auto')">
                 </a>
 
                 <div class="hidden sm:flex flex-grow justify-center mx-4">
                     <div class="relative w-full max-w-lg">
-                        <input type="text" id="product-search-input-desktop" placeholder="Cari produk cetak: kartu nama, banner, flyer, id card..." class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150" oninput="searchProducts(this)">
+                        <input type="text" id="product-search-input-desktop" placeholder="Cari produk cetak: kartu nama, banner, flyer, id card..." 
+                               class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150" 
+                               oninput="searchProducts(this)">
                         <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.44 4.387l3.293 3.294a1 1 0 01-1.414 1.414l-3.294-3.293A7 7 0 012 9z" clip-rule="evenodd" />
                         </svg>
@@ -184,7 +198,9 @@
         <div id="mobile-menu" class="sm:hidden hidden bg-slate-800 border-t border-slate-700 pb-2">
             <div class="px-4 py-2">
                 <div class="relative w-full">
-                    <input type="text" id="product-search-input-mobile" placeholder="Cari produk cetak: kartu nama, banner, flyer, id card..." class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150" oninput="searchProducts(this)">
+                    <input type="text" id="product-search-input-mobile" placeholder="Cari produk cetak: kartu nama, banner, flyer, id card..." 
+                           class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150" 
+                           oninput="searchProducts(this)">
                     <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.44 4.387l3.293 3.294a1 1 0 01-1.414 1.414l-3.294-3.293A7 7 0 012 9z" clip-rule="evenodd" />
                     </svg>
@@ -199,6 +215,7 @@
             </div>
         </div>
     </header>
+
     <section id="carousel" class="mt-0 mb-10 overflow-hidden group" aria-label="Banner Promosi">
         <div class="relative overflow-hidden container-shadow h-64 sm:h-96">
             <div id="slide-container" class="relative h-full">
@@ -235,6 +252,7 @@
         </div>
 
     </section>
+
     <section id="all-product" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 class="text-3xl font-bold text-gray-800 mb-12 text-center">Jelajahi Produk Kami Berdasarkan Kategori</h1>
         
@@ -248,7 +266,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 product-grid">
                 
                 <div class="product-card-polaroid cursor-pointer" data-product-id="P001" onclick="showProductDetails('P001')" data-keywords="kartu nama premium cetak cepat laminasi doff glossy">
-                    <img src="./assets/kartu-nama.png" alt="Cetak Kartu Nama Premium cepat dengan laminasi" 
+                    <img src="./assets/kartu-nama.jpg" alt="Cetak Kartu Nama Premium cepat dengan laminasi" 
                          class="product-image sm:h-56" 
                          onerror="this.onerror=null; this.src='https://placehold.co/400x240/4F46E5/ffffff?text=Kartu+Nama+Premium'">
                     <h4 class="font-bold text-xl text-blue-700">Kartu Nama Premium</h4>
@@ -443,68 +461,46 @@
                         onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/F97316?text=trotec+Logo'">
                 </div>
                 <div class="partner-box">
-                    <img src="./assets/zund-logo.png" alt="Logo mesin cutting digital ZUND G3" class="partner-logo" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/111827?text=ZUND+Logo'">
+                    <img src="./assets/zund-logo.png" alt="Logo mesin potong ZUND" class="partner-logo" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/84CC16?text=ZUND+Logo'">
                 </div>
-                <div class="partner-box">
-                    <img src="./assets/fujifilm-logo.png" alt="Logo FUJIFILM" class="partner-logo" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/6B7280?text=FUJIFILM+Logo'">
-                </div>
-                <div class="partner-box">
-                    <img src="./assets/brother-logo.png" alt="Logo mesin bordir Brother" class="partner-logo" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/2563EB?text=Brother+Logo'">
-                </div>
-                <div class="partner-box">
-                    <img src="./assets/ricoh-logo.png" alt="Logo printer Ricoh Pro C" class="partner-logo" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/D97706?text=Ricoh+Logo'">
-                </div>
-                <div class="partner-box">
-                    <img src="./assets/sharp-logo.png" alt="Logo mesin fotokopi Sharp" class="partner-logo" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/120x40/ffffff/9CA3AF?text=Sharp+Logo'">
-                </div>
+
             </div>
         </section>
 
     </section>
-    
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center"> Cara Pemesanan </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <section id="how-to-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Cara Order Cepat</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
-                <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">
+                <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-red-500 text-white font-bold text-lg">
                     1
                 </div>
                 <h4 class="font-bold text-lg mb-2">Pilih Produk</h4>
-                <p class="text-sm text-gray-600">
-                    Pilih produk cetak sesuai kebutuhan Anda.
-                </p>
+                <p class="text-sm text-gray-600"> Pilih kategori dan produk yang Anda butuhkan. </p>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
-                <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-green-600 text-white font-bold text-lg">
+                <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-green-500 text-white font-bold text-lg">
                     2
                 </div>
                 <h4 class="font-bold text-lg mb-2">Chat WhatsApp</h4>
-                <p class="text-sm text-gray-600">
-                    Klik tombol WhatsApp untuk konsultasi & harga.
-                </p>
+                <p class="text-sm text-gray-600"> Klik tombol WhatsApp untuk konsultasi & harga. </p>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
                 <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">
                     3
                 </div>
                 <h4 class="font-bold text-lg mb-2">Kirim File</h4>
-                <p class="text-sm text-gray-600">
-                    Kirim desain atau minta bantuan desain kami.
-                </p>
+                <p class="text-sm text-gray-600"> Kirim desain atau minta bantuan desain kami. </p>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
                 <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-yellow-500 text-white font-bold text-lg">
                     4
                 </div>
                 <h4 class="font-bold text-lg mb-2">Produksi & Ambil</h4>
-                <p class="text-sm text-gray-600">
-                    Pesanan diproduksi, bisa ambil di Toko atau online via ojol (Pesan dari Customer).
-                </p>
+                <p class="text-sm text-gray-600"> Pesanan diproduksi, bisa ambil di Toko atau online via ojol (Pesan dari Customer). </p>
             </div>
         </div>
     </section>
@@ -514,64 +510,56 @@
         <div id="map-container" class="mt-8 relative overflow-hidden rounded-xl container-shadow">
             </div>
     </section>
-    
+
     <section id="testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Apa Kata Mereka?</h2>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600">
-                <p class="italic text-gray-700 mb-4">
-                    "Kualitas cetak stikernya premium, warna sangat akurat! Prosesnya juga sangat cepat. Selalu jadi langganan."
-                </p>
+                <p class="italic text-gray-700 mb-4"> "Hasil cetakan spanduk dan stiker nya bagus banget. Gak pake lama...sat set jadi. Makasih yaa max printing ...bakal langganan cetak disini. 🙏🏻" </p>
                 <div class="flex items-center">
-                    <img src="https://placehold.co/40x40/3B82F6/ffffff?text=AD" alt="Foto Pelanggan 1" class="w-10 h-10 rounded-full mr-3 object-cover">
+                    <img src="https://placehold.co/40x40/3B82F6/ffffff?text=A" alt="Customer Profile Picture" class="w-10 h-10 rounded-full mr-3">
                     <div>
-                        <div class="font-semibold text-gray-800">Ahmad Darmawan</div>
-                        <div class="text-xs text-gray-500">Pemilik Kedai Kopi</div>
+                        <p class="font-semibold text-gray-900">Andrea Cake & Dessert Pudding, Hampers. Bogor</p>
+                        <p class="text-sm text-gray-500">Andrea Cake & Dessert Pudding, Hampers. Bogor</p>
                     </div>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600">
-                <p class="italic text-gray-700 mb-4">
-                    "Pesan ID Card untuk seluruh karyawan, hasilnya rapi dan proses cetaknya sesuai deadline. Layanan customer service responsif."
-                </p>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-600">
+                <p class="italic text-gray-700 mb-4"> "Pelayanannya sangat baik, ramah, cepat, dan sangatt membantuuu, hasilnya pun bagussss terbaik pokoknyaaa🥰" </p>
                 <div class="flex items-center">
-                    <img src="https://placehold.co/40x40/22C55E/ffffff?text=SK" alt="Foto Pelanggan 2" class="w-10 h-10 rounded-full mr-3 object-cover">
+                    <img src="https://placehold.co/40x40/10B981/ffffff?text=D" alt="Customer Profile Picture" class="w-10 h-10 rounded-full mr-3">
                     <div>
-                        <div class="font-semibold text-gray-800">Siti Khadijah</div>
-                        <div class="text-xs text-gray-500">HRD Perusahaan Teknologi</div>
+                        <p class="font-semibold text-gray-900">Dinda Ainun nisa</p>
+                        <p class="text-sm text-gray-500">Dinda Ainun nisa</p>
                     </div>
-                    </div>
+                </div>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600">
-                <p class="italic text-gray-700 mb-4">
-                    "Mencetak buku menu kafe di sini. Laminasinya tebal dan tahan air, jadi sangat awet. Sangat merekomendasikan!"
-                </p>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-600">
+                <p class="italic text-gray-700 mb-4"> "MaasyaAllah,Alhamdulillah,,cetak dsini gak perlu nunggu lama,,cetak online cutting bisa hari itu langsung jd,,gak mesti munggu lama,,pelayanannya ramah,,pertahankan ya,,," </p>
                 <div class="flex items-center">
-                    <img src="https://placehold.co/40x40/F59E0B/ffffff?text=BU" alt="Foto Pelanggan 3" class="w-10 h-10 rounded-full mr-3 object-cover">
+                    <img src="https://placehold.co/40x40/F59E0B/ffffff?text=Y" alt="Customer Profile Picture" class="w-10 h-10 rounded-full mr-3">
                     <div>
-                        <div class="font-semibold text-gray-800">Budi Utama</div>
-                        <div class="text-xs text-gray-500">Marketing</div>
+                        <p class="font-semibold text-gray-900">yuli ansyah</p>
+                        <p class="text-sm text-gray-500">yuli ansyah</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 py-12">
+    <footer class="bg-slate-900 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 border-b border-gray-700 pb-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <div class="sm:col-span-1 md:col-span-1">
-                    <a href="#" class="inline-flex items-center h-9 mb-4" aria-label="Max Printing Digital Printshop Home">
-                        <img src="./assets/logo-printkoe-light.png" alt="Logo Max Printing Digital Printshop" 
-                             class="h-9 w-auto"
-                             onerror="this.onerror=null; this.src='https://placehold.co/150x36/111827/ffffff?text=Max+Printing+Logo'">
+                    <a href="#" class="inline-block" aria-label="Max Printing Home">
+                        <img src="./assets/Logo MAX 2025.png" alt="Logo Max Printing Digital Printshop" 
+                             class="h-10 w-auto" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/150x40/111827/ffffff?text=Max+Printing+Logo'; this.classList.add('w-auto')">
                     </a>
-                    
-                    <p class="text-gray-400 text-sm mt-3">Jasa percetakan digital cepat, berkualitas, dan murah di Bogor. Solusi cetak profesional untuk bisnis dan personal.</p>
-                    
-                    <h4 class="font-bold text-base mt-6 mb-3 text-white">Link Cepat</h4>
+                    <p class="text-sm text-gray-400 mt-3">Jasa percetakan digital cepat, berkualitas, dan murah di Bogor. Solusi cetak profesional untuk bisnis dan personal.</p>
+
+                    <h4 class="font-bold text-base mt-4 mb-3 text-white">Link Cepat</h4>
                     <ul class="space-y-2">
                         <li><a href="#all-product" class="text-sm text-gray-400 hover:text-blue-400 transition">Semua Produk</a></li>
                         <li><a href="#map-section" class="text-sm text-gray-400 hover:text-blue-400 transition">Lihat Lokasi</a></li>
@@ -581,450 +569,302 @@
                 
                 <div class="sm:col-span-1 md:col-span-1">
                     <h4 class="font-bold text-lg mb-4 text-white" id="kontak-footer">Hubungi Kami</h4>
-                    
                     <ul class="text-gray-400 space-y-3 mb-6">
                         <li class="flex items-start">
                             <svg class="w-5 h-5 flex-shrink-0 mt-0.5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.031 0.793a11.233 11.233 0 0 0-9.697 5.75c-1.848 3.525-1.848 7.828 0 11.353a11.24 11.24 0 0 0 9.697 5.75h.01c.21 0 .42-.007.63-.02a11.222 11.222 0 0 0 9.066-6.176 11.23 11.23 0 0 0-.008-11.045A11.242 11.242 0 0 0 12.031.793zM12.03 2.128a9.886 9.886 0 0 0-8.583 4.793 9.886 9.886 0 0 0-.005 9.887 9.886 9.886 0 0 0 8.588 4.792c.18 0 .36-.003.54-.008.21.003.42.008.63.008a9.886 9.886 0 0 0 8.583-4.793 9.886 9.886 0 0 0 .005-9.887 9.886 9.886 0 0 0-8.588-4.792z"/><path d="M12.03 5.43c-3.67 0-6.66 2.99-6.66 6.66s2.99 6.66 6.66 6.66 6.66-2.99 6.66-6.66-2.99-6.66-6.66-6.66zM15.42 15.34c-.16.16-.36.25-.57.25s-.41-.09-.57-.25l-2.02-2.02c-.37-.37-.73-.73-1.09-1.09-.16-.16-.25-.36-.25-.57s.09-.41.25-.57l2.02-2.02c.33-.33.72-.49 1.1-.49.38 0 .77.16 1.1.49.33.33.49.72.49 1.1s-.16.77-.49 1.1l-1.45 1.45 1.45 1.45c.33.33.49.72.49 1.1s-.16.77-.49 1.1z"/>
-                            </svg>
-                            <div>
-                                <span class="font-medium">WA:</span> <a href="https://wa.me/6281557788168" target="_blank" class="hover:text-blue-400 transition font-bold">0815 5778 8168</a>
-                            </div>
+                                <path d="M12.031 0.793a11.233 11.233 0 0 0-9.697 5.75c-1.848 3.525-1.848 7.828 0 11.353a11.24 11.24 0 0 0 9.697 5.75h.01c.21 0 .42-.007.63-.02a11.222 11.222 0 0 0 9.066-6.176 11.23 11.23 0 0 0-.008-11.045A11.242 11.242 0 0 0 12.031.793zM12.03 2.128a9.886 9.886 0 0 0-8.583 4.793 9.886 9.886 0 0 0-.005 9.887 9.886 9.886 0 0 0 8.588 4.792c.18 0 .36-.003.54-.008.21.003.42.008.63.008a9.886 9.886 0 0 0 8.583-4.793 9.886 9.886 0 0 0 .005-9.887 9.886 9.886 0 0 0-8.588-4.792z"/>
+                                <path d="M12.03 5.43c-3.67 0-6.66 2.99-6.66 6.66s2.99 6.66 6.66 6.66 6.66-2.99 6.66-6.66-2.99-6.66-6.66-6.66zM15.42 15.34c-.16.16-.36.25-.57.25s-.41-.09-.57-.25l-2.02-2.02c-.37-.37-.73-.73-1.09-1.09-.16-.16-.25-.36-.25-.57s.09-.41.25-.57l2.02-2.02c.16-.16.36-.25.57-.25s.41.09.57.25l2.02 2.02c.16.16.25.36.25.57s-.09.41-.25.57l-2.02 2.02z"/>
+                            </svg> 
+                            <a href="https://wa.me/6285157788168" target="_blank" class="hover:text-blue-400 transition">WhatsApp: +62 815-5778-8168</a>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 flex-shrink-0 mt-0.5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                                <path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V8l9 6 9-6v10zM3 6l9 6 9-6H3z"/>
                             </svg>
-                            <div>
-                                <span class="font-medium">Email:</span> <a href="mailto:maxprinting@email.com" class="hover:text-blue-400 transition">maxprinting@email.com</a>
-                            </div>
+                            <a href="mailto:maxprinting.bogor@gmail.com" class="hover:text-blue-400 transition">Email: maxprinting.bogor@gmail.com</a>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 flex-shrink-0 mt-0.5 mr-3 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.96-7-7.93 0-.94.19-1.83.52-2.65l3.86 3.86c.33.33.78.52 1.24.52.46 0 .91-.19 1.24-.52l3.86-3.86c.33.82.52 1.71.52 2.65 0 3.97-3.05 7.44-7 7.93z"/>
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                             </svg>
-                            <div>
-                                <span class="font-medium">Telepon:</span> <a href="tel:+622518330000" class="hover:text-blue-400 transition font-bold">(0251) 833 0000</a>
-                            </div>
+                            <span class="block">Jl. Sholeh Iskandar 77C, Tanah Sareal, Kota Bogor 16164</span>
                         </li>
                     </ul>
-
-                    <h4 class="font-bold text-lg mb-4 text-white">Alamat Kami</h4>
-                    <p class="text-gray-400 text-sm">
-                        Jl. Raya Pajajaran No. 123, Bogor, Jawa Barat 16128
-                    </p>
-                    <p class="mt-2 text-sm font-medium text-blue-400 hover:text-blue-200 transition">
-                        <a href="#map-container" class="flex items-center">
-                            Lihat di Peta
-                        </a>
-                    </p>
+                    
                 </div>
 
-                <div class="sm:col-span-2 md:col-span-1">
+                <div class="sm:col-span-1 md:col-span-1">
                     <h4 class="font-bold text-lg mb-4 text-white">Jam Operasional</h4>
-                    
-                    <ul class="text-gray-400 space-y-1 text-sm mb-6">
-                        <li>Senin - Jumat: <span class="font-semibold text-white">08.00 - 22.00 WIB</span></li>
-                        <li>Sabtu - Minggu & Libur: <span class="font-semibold text-white">08.00 - 20.00 WIB</span></li>
-                    </ul>
-                    <p class="text-xs text-gray-500 italic mt-3">
-                        *Pemesanan online sesuai jam kerja toko.
-                    </p>
+                    <div class="text-gray-400 space-y-2">
+                        <p class="font-semibold text-gray-400">Senin - Jum'at:</p>
+                        <p>08:00 - 22.00 WIB</p>
+                        <p class="font-semibold text-gray-400 mt-4">Minggu - Sabtu:</p>
+                        <p>08.00 - 20.00</p>
+                    </div>
+                    <p class="text-xs text-gray-500 italic mt-3"> *Pemesanan online sesuai jam operasional toko. </p>
 
                     <h4 class="font-bold text-lg mb-4 text-white mt-8">Sosial Media</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.instagram.com/USERNAME_IG" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-pink-500 transition">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7.75 2a5.75 5.75 0 0 1 5.75 5.75v8.5A5.75 5.75 0 0 1 7.75 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Z" clip-rule="evenodd"/><path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-                                Instagram
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@USERNAME_YOUTUBE" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-red-500 transition">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.5s-.2-1.7-.8-2.4c-.8-.8-1.7-.8-2.1-.9C17.7 3 12 3 12 3h0s-5.7 0-8.6.2c-.4 0-1.3.1-2.1.9-.6.7-.8 2.4-.8 2.4S0 8.4 0 10.3v1.4c0 1.9.5 3.8.5 3.8s.2 1.7.8 2.4c.8.8 1.9.8 2.4.9 1.7.2 8.3.2 8.3.2s5.7 0 8.6-.2c.4 0 1.3-.1 2.1-.9.6-.7.8-2.4.8-2.4s.5-1.9.5-3.8v-1.4c0-1.9-.5-3.8-.5-3.8zM9.7 15.2V8.8l6.3 3.2-6.3 3.2z"/></svg>
-                                YouTube
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                    <div class="flex space-x-5">
+                        <a href="https://www.instagram.com/USERNAME_IG"
+   target="_blank"
+   class="text-gray-400 hover:text-pink-500 transition"
+   aria-label="Instagram">
 
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-                <p class="text-sm text-gray-400">© 2024 Max Printing Digital Printshop. Hak Cipta Dilindungi.</p>
-                <p class="text-xs text-gray-500 mt-2">Dibuat dengan ❤️ di Bogor.</p>
+  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5A4.26 4.26 0 003.5 7.75v8.5a4.26 4.26 0 004.25 4.25h8.5a4.26 4.26 0 004.25-4.25v-8.5A4.26 4.26 0 0016.25 3.5h-8.5z"/>
+    <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5A3.5 3.5 0 1112 15.5 3.5 3.5 0 0112 8.5z"/>
+    <circle cx="17.5" cy="6.5" r="1"/>
+  </svg>
+
+</a>
+
+                        <a href="https://www.youtube.com/@USERNAME_YT"
+   target="_blank"
+   class="text-gray-400 hover:text-red-600 transition"
+   aria-label="YouTube">
+
+  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.8-.9-1.7-.9-2.1-1C17.6 2.5 12 2.5 12 2.5h0s-5.6 0-8.5.2c-.4.1-1.3.1-2.1 1C.7 4.5.5 6.2.5 6.2S.3 8.2.3 10.2v1.6c0 2 .2 4 .2 4s.2 1.7.9 2.5c.8.9 1.9.9 2.4 1 1.7.2 7.2.2 7.2.2s5.6 0 8.5-.2c.4-.1 1.3-.1 2.1-1 .7-.8.9-2.5.9-2.5s.2-2 .2-4v-1.6c0-2-.2-4-.2-4zM9.75 14.5v-5l5 2.5-5 2.5z"/>
+  </svg>
+
+</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-slate-700 text-center">
+                <p class="text-sm text-gray-500">© 2025 Max Printing Digital Printshop. Hak Cipta Dilindungi.</p>
             </div>
         </div>
     </footer>
 
 
-    <div id="product-detail-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-40">
-        
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg mx-auto modal-content">
-            <button onclick="closeProductDetails()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold p-2 z-10">×</button>
+    <div id="product-detail-modal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-40" role="dialog" aria-modal="true" aria-labelledby="modal-product-title">
+        <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl z-10">
+                <h3 id="modal-product-title" class="text-2xl font-bold text-blue-700">Detail Produk</h3>
+                <button onclick="closeProductDetails()" class="text-gray-400 hover:text-gray-700 transition" aria-label="Tutup detail produk">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
             
-            <div class="p-4 sm:p-6 lg:p-8 max-h-[90vh] sm:max-h-[80vh] overflow-y-auto modal-body-scroll">
-                
-                <h2 id="modal-product-title" class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Nama Produk</h2>
-                
-                <img id="modal-product-image" src="https://placehold.co/400x240" alt="Foto Detail Produk" class="w-full h-48 object-cover rounded-lg mb-4">
-                
-                <h3 class="text-xl font-semibold text-blue-700 mb-3">Deskripsi</h3>
-                <p id="modal-product-description" class="text-gray-600 mb-6 leading-relaxed">
-                    Deskripsi lengkap produk akan ditampilkan di sini.
-                </p>
-
-                <h4 class="text-xl font-semibold text-gray-800 mb-3 border-b pb-1 border-gray-200">Spesifikasi Utama</h4>
-                <div id="modal-product-specs" class="space-y-3 mb-6">
+            <div class="modal-body-scroll p-6 overflow-y-auto flex-grow">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img id="modal-product-image" src="https://placehold.co/500x300/F3F4F6/9CA3AF?text=Loading..." alt="Gambar Produk" class="w-full h-auto object-cover rounded-lg mb-6">
+                        
+                        <h4 class="font-bold text-xl text-gray-800 mb-3">Deskripsi Produk</h4>
+                        <p id="modal-product-description" class="text-gray-600 leading-relaxed">
+                            Deskripsi detail produk akan dimuat di sini.
+                        </p>
                     </div>
 
-                <div class="mt-8 pt-4 border-t border-gray-200">
-                    <a id="modal-whatsapp-link" href="https://wa.me/6281557788168?text=Halo%20Max%20Printing%2C%20saya%20tertarik%20dengan%20produk%20[NAMA_PRODUK]%20dan%20ingin%20memesan." 
-                       target="_blank" 
-                       class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-green-500 hover:bg-green-600 transition duration-150 shadow-lg">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.031 0.793a11.233 11.233 0 0 0-9.697 5.75c-1.848 3.525-1.848 7.828 0 11.353a11.24 11.24 0 0 0 9.697 5.75h.01c.21 0 .42-.007.63-.02a11.222 11.222 0 0 0 9.066-6.176 11.23 11.23 0 0 0-.008-11.045A11.242 11.242 0 0 0 12.031.793zM12.03 2.128a9.886 9.886 0 0 0-8.583 4.793 9.886 9.886 0 0 0-.005 9.887 9.886 9.886 0 0 0 8.588 4.792c.18 0 .36-.003.54-.008.21.003.42.008.63.008a9.886 9.886 0 0 0 8.583-4.793 9.886 9.886 0 0 0 .005-9.887 9.886 9.886 0 0 0-8.588-4.792z"/><path d="M12.03 5.43c-3.67 0-6.66 2.99-6.66 6.66s2.99 6.66 6.66 6.66 6.66-2.99 6.66-6.66-2.99-6.66-6.66-6.66zM15.42 15.34c-.16.16-.36.25-.57.25s-.41-.09-.57-.25l-2.02-2.02c-.37-.37-.73-.73-1.09-1.09-.16-.16-.25-.36-.25-.57s.09-.41.25-.57l2.02-2.02c.33-.33.72-.49 1.1-.49.38 0 .77.16 1.1.49.33.33.49.72.49 1.1s-.16.77-.49 1.1l-1.45 1.45 1.45 1.45c.33.33.49.72.49 1.1s-.16.77-.49 1.1z"/>
-                        </svg>
-                        Pesan Sekarang via WhatsApp
-                    </a>
+                    <div>
+                        <h4 class="font-bold text-xl text-gray-800 mb-3">Spesifikasi Utama</h4>
+                        <ul id="modal-product-specs" class="space-y-3 text-gray-700 mb-8">
+                            </ul>
+
+                        <h4 class="font-bold text-xl text-gray-800 mb-3">Pesan Sekarang</h4>
+                        <p class="text-gray-600 mb-4">Butuh informasi harga atau kustomisasi? Hubungi kami langsung via WhatsApp!</p>
+                        
+                        <a href="https://wa.me/6285157788168?text=Halo%20Max%20Printing%2C%20saya%20tertarik%20dengan%20produk%20[Nama Produk]%20dan%20ingin%20tanya%20harga.%20Terima%20kasih." target="_blank" class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150">
+                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.031 0.793a11.233 11.233 0 0 0-9.697 5.75c-1.848 3.525-1.848 7.828 0 11.353a11.24 11.24 0 0 0 9.697 5.75h.01c.21 0 .42-.007.63-.02a11.222 11.222 0 0 0 9.066-6.176 11.23 11.23 0 0 0-.008-11.045A11.242 11.242 0 0 0 12.031.793zM12.03 2.128a9.886 9.886 0 0 0-8.583 4.793 9.886 9.886 0 0 0-.005 9.887 9.886 9.886 0 0 0 8.588 4.792c.18 0 .36-.003.54-.008.21.003.42.008.63.008a9.886 9.886 0 0 0 8.583-4.793 9.886 9.886 0 0 0 .005-9.887 9.886 9.886 0 0 0-8.588-4.792zM12.03 5.43c-3.67 0-6.66 2.99-6.66 6.66s2.99 6.66 6.66 6.66 6.66-2.99 6.66-6.66-2.99-6.66-6.66-6.66zM15.42 15.34c.16.16.25.36.25.57s-.09.41-.25.57l-2.02 2.02c-.16.16-.36.25-.57.25s-.41-.09-.57-.25l-2.02-2.02c-.16-.16-.25-.36-.25-.57s.09-.41.25-.57l2.02-2.02c.16-.16.36-.25.57-.25s.41.09.57.25l2.02 2.02z"/></svg>
+                            Hubungi via WhatsApp
+                        </a>
+
+                        <button onclick="closeProductDetails()" class="w-full mt-3 inline-flex justify-center items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150">
+                            Lihat Produk Lain
+                        </button>
+                    </div>
                 </div>
             </div>
-            </div>
-    </div>
-
-
-    <a href="https://wa.me/6281557788168?text=Halo%20Max%20Printing%2C%20saya%20ingin%20konsultasi." 
-       id="whatsapp-fab"
-       target="_blank"
-       class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-xl z-30 flex items-center gap-2 transition duration-300 transform hover:scale-105"
-       aria-label="Hubungi kami via WhatsApp">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.031 0.793a11.233 11.233 0 0 0-9.697 5.75c-1.848 3.525-1.848 7.828 0 11.353a11.24 11.24 0 0 0 9.697 5.75h.01c.21 0 .42-.007.63-.02a11.222 11.222 0 0 0 9.066-6.176 11.23 11.23 0 0 0-.008-11.045A11.242 11.242 0 0 0 12.031.793zM12.03 2.128a9.886 9.886 0 0 0-8.583 4.793 9.886 9.886 0 0 0-.005 9.887 9.886 9.886 0 0 0 8.588 4.792c.18 0 .36-.003.54-.008.21.003.42.008.63.008a9.886 9.886 0 0 0 8.583-4.793 9.886 9.886 0 0 0 .005-9.887 9.886 9.886 0 0 0-8.588-4.792z"/><path d="M12.03 5.43c-3.67 0-6.66 2.99-6.66 6.66s2.99 6.66 6.66 6.66 6.66-2.99 6.66-6.66-2.99-6.66-6.66-6.66zM15.42 15.34c-.16.16-.36.25-.57.25s-.41-.09-.57-.25l-2.02-2.02c-.37-.37-.73-.73-1.09-1.09-.16-.16-.25-.36-.25-.57s.09-.41.25-.57l2.02-2.02c.33-.33.72-.49 1.1-.49.38 0 .77.16 1.1.49.33.33.49.72.49 1.1s-.16.77-.49 1.1l-1.45 1.45 1.45 1.45c.33.33.49.72.49 1.1s-.16.77-.49 1.1z"/>
-        </svg>
-
-        <span class="hidden sm:inline text-sm font-semibold">
-            Chat WhatsApp
-        </span>
-    </a>
-
-    <div id="promoPopup"
-         class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-
-        <div class="bg-white max-w-sm w-full mx-4 rounded-xl shadow-lg p-6 relative text-center">
-            <button onclick="closePromo()"
-                    class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-xl">
-                ×
-            </button>
-
-            <h3 class="text-xl font-bold text-gray-800 mb-2">
-                🎉 Promo Spesial!
-            </h3>
-
-            <p class="text-sm text-gray-600 mb-4">
-                Gratis desain untuk cetak banner & stiker minggu ini.
-            </p>
-
-            <a href="https://wa.me/6281557788168?text=Halo%20Max%20Printing%2C%20saya%20ingin%20klaim%20promo."
-               target="_blank"
-               class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition">
-                Klaim Promo Sekarang!
-            </a>
+            
         </div>
     </div>
 
 
+    <div id="promoPopup" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden" role="alertdialog" aria-modal="true" aria-labelledby="promo-title">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 relative">
+            <button onclick="closePromo()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 transition" aria-label="Tutup promosi">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center">
+                <svg class="mx-auto h-12 w-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 id="promo-title" class="text-xl font-bold text-gray-900 mt-3">PROMO BULAN INI!</h3>
+                <div class="mt-2">
+                    <p class="text-lg font-semibold text-red-600">Diskon 15% untuk semua jenis Stiker Custom Vynil!</p>
+                    <p class="text-sm text-gray-500 mt-1">Gunakan kode promo: <span class="font-bold text-blue-600">STICKERHEBAT</span></p>
+                    <p class="text-xs text-gray-400 mt-4">Syarat & Ketentuan berlaku. Promo berakhir 30 Desember.</p>
+                </div>
+                <div class="mt-5 sm:mt-6">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Max%20Printing%2C%20saya%20mau%20order%20Stiker%20Custom%20Vynil%20dengan%20promo%20STICKERHEBAT." target="_blank" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm">
+                        Klaim Promo Sekarang!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="https://wa.me/6285157788168?text=Halo%20Max%20Printing%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20cetak." target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-105 z-30" aria-label="Chat via WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0.793a11.233 11.233 0 0 0-9.697 5.75c-1.848 3.525-1.848 7.828 0 11.353a11.24 11.24 0 0 0 9.697 5.75h.01c.21 0 .42-.007.63-.02a11.222 11.222 0 0 0 9.066-6.176 11.23 11.23 0 0 0-.008-11.045A11.242 11.242 0 0 0 12.031.793zM12.03 2.128a9.886 9.886 0 0 0-8.583 4.793 9.886 9.886 0 0 0-.005 9.887 9.886 9.886 0 0 0 8.588 4.792c.18 0 .36-.003.54-.008.21.003.42.008.63.008a9.886 9.886 0 0 0 8.583-4.793 9.886 9.886 0 0 0 .005-9.887 9.886 9.886 0 0 0-8.588-4.792zM12.03 5.43c-3.67 0-6.66 2.99-6.66 6.66s2.99 6.66 6.66 6.66 6.66-2.99 6.66-6.66-2.99-6.66-6.66-6.66zM15.42 15.34c.16.16.25.36.25.57s-.09.41-.25.57l-2.02 2.02c-.16.16-.36.25-.57.25s-.41-.09-.57-.25l-2.02-2.02c-.16-.16-.25-.36-.25-.57s.09-.41.25-.57l2.02-2.02c.16-.16.36-.25.57-.25s.41.09.57.25l2.02 2.02z"/></svg>
+    </a>
+
     <script>
-        // Data Produk (Dikeluarkan dari function untuk akses global yang lebih rapi)
-        const productData = {
-            'P001': {
-                title: 'Kartu Nama Premium',
-                description: 'Cetak kartu nama cepat, berkualitas tinggi dengan bahan Art Carton. Tersedia pilihan laminasi doff (elegan) atau glossy (mengilap) untuk kesan profesional yang tahan lama.',
-                imageSrc: './assets/kartu-nama.png',
-                specs: [
-                    { label: 'Bahan', value: 'Art Carton 260/310 gsm' },
-                    { label: 'Finishing', value: 'Laminasi Doff / Glossy' },
-                    { label: 'Min. Order', value: '100 pcs (1 box)' }
-                ]
-            },
-            'P002': {
-                title: 'ID Card & Kartu Anggota',
-                description: 'Cetak ID Card dan kartu anggota berbahan PVC standar ISO. Cocok untuk kartu karyawan, member, atau komunitas. Opsi tambahan: chip, magnetic stripe, dan barcode.',
-                imageSrc: './assets/id-card.png',
-                specs: [
-                    { label: 'Bahan', value: 'PVC Standard ISO' },
-                    { label: 'Opsi Tambahan', value: 'Magnetic Stripe, Barcode, Chip' },
-                    { label: 'Min. Order', value: '1 pcs (Satuan) / 10 pcs (Massal)' }
-                ]
-            },
-            'P003': {
-                title: 'Kartu Undangan Custom',
-                description: 'Undangan eksklusif dengan pilihan bahan premium seperti Jasmine dan Art Paper. Kami membantu mewujudkan undangan impian Anda untuk pernikahan, ulang tahun, atau acara penting lainnya.',
-                imageSrc: './assets/kartu-undangan.png',
-                specs: [
-                    { label: 'Bahan', value: 'Art Paper/Carton, Jasmine, Akrilik' },
-                    { label: 'Finishing', value: 'Foil Emas/Perak, Emboss/Deboss' },
-                    { label: 'Min. Order', value: 'Tergantung desain (Mulai dari 50 pcs)' }
-                ]
-            },
-            'P004': {
-                title: 'Tiket Event dengan Pengaman',
-                description: 'Cetak tiket profesional untuk konser, seminar, atau acara. Dilengkapi dengan fitur keamanan seperti nomor seri, perforasi, dan cetak UV untuk mencegah pemalsuan.',
-                imageSrc: './assets/tiket-event.png',
-                specs: [
-                    { label: 'Bahan', value: 'Art Paper, Matte Paper' },
-                    { label: 'Fitur Keamanan', value: 'Nomor Seri, Perforasi, Tinta UV (Opsional)' },
-                    { label: 'Min. Order', value: '100 lembar' }
-                ]
-            },
-            'P005': {
-                title: 'Flyer & Brosur Promosi',
-                description: 'Solusi cetak flyer dan brosur cepat untuk kebutuhan promosi bisnis Anda. Tersedia berbagai ukuran (A4, A5, A6) dan jenis lipatan (lipat 2, lipat 3) dengan kualitas cetak full color.',
-                imageSrc: './assets/flyer-brosur.png',
-                specs: [
-                    { label: 'Bahan', value: 'Art Paper 120/150 gsm' },
-                    { label: 'Ukuran', value: 'A4, A5, A6, Custom' },
-                    { label: 'Finishing', value: 'Lipatan, Laminasi (Opsional)' },
-                    { label: 'Min. Order', value: '100 pcs' }
-                ]
-            },
-            'P006': {
-                title: 'Banner & Spanduk Outdoor/Indoor',
-                description: 'Cetak banner dan spanduk (spanduk) dengan bahan Flexy yang tahan cuaca. Cocok untuk promosi di luar (outdoor) maupun di dalam ruangan (indoor). Kualitas cetak besar yang tajam.',
-                imageSrc: './assets/banner-spanduk.png',
-                specs: [
-                    { label: 'Bahan', value: 'Flexy 280 / 340 gsm' },
-                    { label: 'Tinta', value: 'Outdoor Solvent (Tahan Air & UV)' },
-                    { label: 'Finishing', value: 'Mata Ayam (lubang), Kantong' }
-                ]
-            },
-            'P007': {
-                title: 'Kalender Custom Dinding & Meja',
-                description: 'Cetak kalender kustom untuk perusahaan atau hadiah. Tersedia kalender dinding dan meja dengan bahan art carton tebal. Cocok untuk promosi tahunan.',
-                imageSrc: './assets/kalender-custom.png',
-                specs: [
-                    { label: 'Model', value: 'Dinding, Meja' },
-                    { label: 'Bahan', value: 'Art Carton 210/260 gsm' },
-                    { label: 'Min. Order', value: '50 pcs' }
-                ]
-            },
-            'P008': {
-                title: 'Poster A3+ Cetak Satuan',
-                description: 'Cetak poster ukuran A3+ (lebih besar dari A3) untuk kebutuhan presentasi, pengumuman, atau dekorasi. Bisa cetak satuan atau grosir dengan kertas tebal glossy.',
-                imageSrc: './assets/poster-a3.png',
-                specs: [
-                    { label: 'Ukuran', value: 'A3+ (32 x 48 cm)' },
-                    { label: 'Kertas', value: 'Art Paper/Carton Glossy' },
-                    { label: 'Layanan', value: 'Cetak Satuan atau Grosir' }
-                ]
-            },
-            'P009': {
-                title: 'Stiker Custom Potong Pola',
-                description: 'Stiker custom tersedia dalam berbagai bahan spesial seperti Hologram, Gold, Silver, Putih, Transparan, Chromo, Vinyl (tahan air), dan untuk keperluan Indoor. Dicetak full color dan dipotong sesuai pola (kiss cut atau die cut). Ideal untuk label kemasan produk.',
-                imageSrc: './assets/stiker-custom.png',
-                specs: [
-                    { label: 'Bahan', value: 'Hologram, Gold, Silver, Putih, Transparan, Chromo, Vinyl, Indoor' },
-                    { label: 'Finishing', value: 'Laminasi Doff/Glossy' },
-                    { label: 'Potongan', value: 'Kotak, Lingkaran, Pola Kustom' }
-                ]
-            },
-            'P010': {
-                title: 'Buku Menu Restoran & Kafe',
-                description: 'Cetak buku menu yang profesional dan tahan lama. Kami menyediakan laminasi tebal (doff/glossy) yang tahan air dan minyak, memastikan menu Anda terlihat menarik dan awet.',
-                imageSrc: './assets/buku-menu.png',
-                specs: [
-                    { label: 'Bahan Cover', value: 'Art Carton Tebal + Laminasi' },
-                    { label: 'Isi', value: 'Art Paper Full Color' },
-                    { label: 'Finishing', value: 'Spiral, Jilid Kawat/Benang' }
-                ]
-            },
-            'P011': {
-                title: 'Amplop & Kop Surat Bisnis',
-                description: 'Lengkapi kebutuhan korespondensi bisnis Anda dengan amplop dan kop surat custom. Cetak full color dengan kertas premium untuk kesan profesional.',
-                imageSrc: './assets/amplop-kop-surat.png',
-                specs: [
-                    { label: 'Bahan Kop Surat', value: 'HVS 80/100 gsm' },
-                    { label: 'Bahan Amplop', value: 'HVS, Samson, Custom' },
-                    { label: 'Ukuran', value: 'A4, F4, Custom' }
-                ]
-            },
-            'P012': {
-                title: 'Cetak Foto Kanvas Siap Pajang',
-                description: 'Ubah foto favorit Anda menjadi karya seni. Cetak foto pada kanvas premium dengan hasil warna yang akurat dan detail tinggi. Sudah termasuk frame, siap pajang.',
-                imageSrc: './assets/foto-kanvas.png',
-                specs: [
-                    { label: 'Media', value: 'Kanvas Premium' },
-                    { label: 'Ukuran', value: 'Berbagai Pilihan (A4 - 100x200 cm)' },
-                    { label: 'Layanan', value: 'Siap dengan Frame Kayu' }
-                ]
-            },
-            'P013': {
-                title: 'Mug Custom Keramik',
-                description: 'Cetak mug custom dengan teknologi sublimasi full color. Hasil cetak cerah dan tahan lama. Cocok untuk hadiah ulang tahun, souvenir acara, atau merchandise perusahaan.',
-                imageSrc: './assets/mug-custom.png',
-                specs: [
-                    { label: 'Bahan', value: 'Keramik Putih Glossy' },
-                    { label: 'Teknologi', value: 'Sublimasi Full Color' },
-                    { label: 'Cocok Untuk', value: 'Souvenir, Hadiah' }
-                ]
-            },
-            'P014': {
-                title: 'Puzzle Foto Custom',
-                description: 'Puzzle unik yang dibuat dari foto Anda. Tersedia dalam berbagai jumlah keping dan ukuran. Hadiah yang sempurna dan menyenangkan untuk semua usia.',
-                imageSrc: './assets/puzzle-foto.png',
-                specs: [
-                    { label: 'Ukuran', value: 'A4, A3' },
-                    { label: 'Bahan', value: 'Hard Board Karton Tebal' },
-                    { label: 'Jumlah Keping', value: 'Tergantung ukuran' }
-                ]
-            },
-            'P015': {
-                title: 'Sertifikat & Piagam Penghargaan',
-                description: 'Cetak sertifikat dan piagam dengan kertas premium dan opsi cetak foil emas/perak. Cocok untuk acara wisuda, pelatihan, atau penghargaan internal perusahaan.',
-                imageSrc: './assets/sertifikat-piagam.png',
-                specs: [
-                    { label: 'Bahan', value: 'Kertas Linen, Art Carton' },
-                    { label: 'Finishing', value: 'Foil Emas/Perak' },
-                    { label: 'Layanan', value: 'Cetak Satuan/Massal' }
-                ]
-            }
+        /*
+        |--------------------------------------------------------------------------
+        | CUSTOM JAVASCRIPT UNTUK MAX PRINTING
+        |--------------------------------------------------------------------------
+        | File ini berisi semua data produk, logika interaksi pengguna, carousel, 
+        | dan fungsi pencarian.
+        */
+
+        // --- 1. Product Data ---
+        const productData = { 
+            'P001': { title: 'Kartu Nama Premium', description: 'Kartu nama cetak cepat dengan bahan Art Carton dan pilihan laminasi Doff atau Glossy. Cocok untuk profesional yang membutuhkan kualitas cetak terbaik dalam waktu singkat.', imageSrc: './assets/kartu-nama.jpg', specs: [ { label: 'Bahan', value: 'Art Carton 260/310 gsm' }, { label: 'Finishing', value: 'Laminasi Doff/Glossy' }, { label: 'Min. Order', value: '100 pcs (1 box)' } ] }, 
+            'P002': { title: 'ID Card & Kartu Anggota', description: 'Cetak ID Card dan kartu anggota berbahan PVC standar ISO. Cocok untuk kartu karyawan, member, atau komunitas. Opsi tambahan: chip, magnetic stripe, dan barcode.', imageSrc: './assets/id-card.png', specs: [ { label: 'Bahan', value: 'PVC Standard ISO' }, { label: 'Opsi Tambahan', value: 'Magnetic Stripe, Barcode, Chip' }, { label: 'Min. Order', value: '1 pcs (Satuan) / 10 pcs (Massal)' } ] }, 
+            'P003': { title: 'Kartu Undangan Custom', description: 'Undangan eksklusif dengan pilihan bahan premium seperti Jasmine dan Art Paper. Kami membantu mewujudkan undangan impian Anda untuk pernikahan, ulang tahun, atau acara penting lainnya.', imageSrc: './assets/kartu-undangan.png', specs: [ { label: 'Bahan', value: 'Art Paper/Carton, Jasmine, Akrilik' }, { label: 'Finishing', value: 'Foil Emas/Perak, Emboss/Deboss' }, { label: 'Min. Order', value: 'Tergantung desain (Mulai dari 50 pcs)' } ] }, 
+            'P004': { title: 'Tiket Event dengan Pengaman', description: 'Cetak tiket profesional untuk konser, seminar, atau acara. Dilengkapi dengan fitur keamanan seperti nomor seri, perforasi, dan cetak UV untuk mencegah pemalsuan.', imageSrc: './assets/tiket-event.png', specs: [ { label: 'Bahan', value: 'Art Paper, Matte Paper' }, { label: 'Fitur Keamanan', value: 'Nomor Seri, Perforasi, Cetak UV' }, { label: 'Min. Order', value: '100 pcs' } ] }, 
+            'P005': { title: 'Flyer & Brosur Promosi', description: 'Cetak cepat flyer dan brosur dalam berbagai ukuran (A4, A5, A6) dan pilihan kertas (Art Paper, Art Carton) untuk kebutuhan promosi bisnis Anda.', imageSrc: './assets/flyer-brosur.png', specs: [ { label: 'Ukuran', value: 'A4, A5, A6, DL' }, { label: 'Kertas', value: 'Art Paper 120/150 gsm' }, { label: 'Min. Order', value: '500 pcs' } ] }, 
+            'P006': { title: 'Banner & Spanduk Outdoor/Indoor', description: 'Cetak banner dan spanduk dengan bahan Flexy berkualitas tinggi untuk penggunaan outdoor maupun indoor. Tahan cuaca dan hasil cetak tajam. Harga per meter persegi.', imageSrc: './assets/banner-spanduk.png', specs: [ { label: 'Bahan', value: 'Flexy China/Korea (280 - 440 gsm)' }, { label: 'Tinta', value: 'Eco-Solvent (Tahan air/UV)' }, { label: 'Finishing', value: 'Mata Ayam (Ring), Lipat, Slongsong' } ] }, 
+            'P007': { title: 'Kalender Custom Dinding & Meja', description: 'Cetak kalender kustom untuk perusahaan atau hadiah. Tersedia kalender dinding dan meja dengan bahan art carton tebal. Cocok untuk promosi tahunan.', imageSrc: './assets/kalender-custom.png', specs: [ { label: 'Model', value: 'Dinding, Meja' }, { label: 'Bahan', value: 'Art Carton 210/260 gsm' }, { label: 'Min. Order', value: '50 pcs' } ] }, 
+            'P008': { title: 'Poster A3+ Cetak Satuan', description: 'Cetak poster ukuran A3+ (lebih besar dari A3) untuk kebutuhan presentasi, pengumuman, atau dekorasi. Bisa cetak satuan atau grosir dengan kertas tebal glossy.', imageSrc: './assets/poster-a3.png', specs: [ { label: 'Ukuran', value: 'A3+ (32 x 48 cm)' }, { label: 'Kertas', value: 'Art Paper/Carton Glossy' }, { label: 'Layanan', value: 'Cetak Satuan atau Grosir' } ] }, 
+            'P009': { title: 'Stiker Custom Potong Pola', description: 'Stiker custom tersedia dalam berbagai bahan spesial seperti Hologram, Gold, Silver, Putih, Transparan, Chromo, Vinyl (tahan air), dan untuk keperluan Indoor. Dicetak full color dan dipotong sesuai pola (kiss cut atau die cut). Ideal untuk label kemasan produk.', imageSrc: './assets/stiker-custom.png', specs: [ { label: 'Bahan', value: 'Hologram, Gold, Silver, Putih, Transparan, Chromo, Vinyl, Indoor' }, { label: 'Finishing', value: 'Laminasi Doff/Glossy' }, { label: 'Potongan', value: 'Kotak, Lingkaran, Pola Kustom' } ] }, 
+            'P010': { title: 'Buku Menu Restoran & Kafe', description: 'Cetak buku menu yang profesional dan tahan lama. Kami menyediakan laminasi tebal (doff/glossy) yang tahan air dan minyak, cocok untuk penggunaan di restoran atau kafe.', imageSrc: './assets/buku-menu.png', specs: [ { label: 'Bahan', value: 'Art Paper/Carton' }, { label: 'Finishing', value: 'Laminasi Doff/Glossy (Tahan Air)' }, { label: 'Model', value: 'Jilid Spiral, Jilid Staples, Hardcover' } ] }, 
+            'P011': { title: 'Amplop & Kop Surat Bisnis', description: 'Cetak amplop dan kop surat full color dengan kertas premium. Meningkatkan citra profesionalisme bisnis Anda.', imageSrc: './assets/amplop-kop-surat.png', specs: [ { label: 'Bahan', value: 'HVS, Conqueror, Art Paper' }, { label: 'Ukuran', value: 'A4, F4, Custom' }, { label: 'Warna', value: 'Full Color (CMYK)' } ] }, 
+            'P012': { title: 'Foto Kanvas Siap Pajang', description: 'Abadikan momen spesial Anda dengan cetak foto di kanvas premium. Hasil cetak dengan warna yang akurat dan detail tinggi. Sudah termasuk frame, siap pajang.', imageSrc: './assets/foto-kanvas.png', specs: [ { label: 'Media', value: 'Kanvas Premium' }, { label: 'Ukuran', value: 'Berbagai Pilihan (A4 - 100x200 cm)' }, { label: 'Layanan', value: 'Siap dengan Frame Kayu' } ] }, 
+            'P013': { title: 'Mug Custom Keramik', description: 'Cetak mug custom dengan teknologi sublimasi full color. Hasil cetak cerah dan tahan lama. Cocok untuk hadiah ulang tahun, souvenir acara, atau merchandise perusahaan.', imageSrc: './assets/mug-custom.png', specs: [ { label: 'Bahan', value: 'Keramik Putih Glossy' }, { label: 'Teknologi', value: 'Sublimasi Full Color' }, { label: 'Cocok Untuk', value: 'Souvenir, Hadiah' } ] }, 
+            'P014': { title: 'Puzzle Foto Custom', description: 'Puzzle unik yang dibuat dari foto Anda. Tersedia dalam berbagai jumlah keping dan ukuran. Hadiah yang sempurna dan menyenangkan untuk semua usia.', imageSrc: './assets/puzzle-foto.png', specs: [ { label: 'Ukuran', value: 'A4, A3' }, { label: 'Bahan', value: 'Hard Board Karton Tebal' }, { label: 'Jumlah Keping', value: 'Tergantung ukuran' } ] }, 
+            'P015': { title: 'Sertifikat & Piagam Penghargaan', description: 'Cetak sertifikat dan piagam dengan kertas premium dan opsi cetak foil emas/perak. Cocok untuk acara wisuda, pelatihan, atau penghargaan internal perusahaan.', imageSrc: './assets/sertifikat-piagam.png', specs: [ { label: 'Bahan', value: 'Kertas Linen, Art Carton' }, { label: 'Finishing', value: 'Foil Emas/Perak' }, { label: 'Layanan', value: 'Cetak Satuan/Massal' } ] } 
         };
 
-        // Fungsi untuk menampilkan modal detail produk
+        // --- 2. Modal (Product Details) Functions ---
+
+        /**
+         * Menampilkan modal detail produk berdasarkan ID produk.
+         * @param {string} productId - ID produk (e.g., 'P001')
+         */
         function showProductDetails(productId) {
             const data = productData[productId];
             const modal = document.getElementById('product-detail-modal');
-
+            
             if (!data) {
                 console.error('Data produk tidak ditemukan untuk ID:', productId);
-                // Di aplikasi nyata, tampilkan pesan error yang bagus di UI
                 return;
             }
 
             // Isi data ke dalam modal
             document.getElementById('modal-product-title').textContent = data.title;
             
-            // Set image, termasuk fallback onerror
+            // Set image
             const modalImage = document.getElementById('modal-product-image');
             modalImage.src = data.imageSrc;
-            modalImage.alt = `Foto Detail ${data.title}`;
+            modalImage.alt = `Gambar produk ${data.title}`;
             modalImage.onerror = function() {
-                this.src='https://placehold.co/400x240/D1D5DB/1F2937?text=Gambar+Tidak+Tersedia';
+                this.src = 'https://placehold.co/500x300/F3F4F6/9CA3AF?text=Gambar+Produk+Tidak+Tersedia';
             };
 
             document.getElementById('modal-product-description').textContent = data.description;
 
-            // Isi spesifikasi
-            const specsContainer = document.getElementById('modal-product-specs');
-            specsContainer.innerHTML = ''; // Bersihkan konten lama
+            // Isi Spesifikasi
+            const specsList = document.getElementById('modal-product-specs');
+            specsList.innerHTML = '';
             data.specs.forEach(spec => {
-                const specItem = document.createElement('div');
-                specItem.classList.add('flex', 'justify-between', 'border-b', 'border-gray-100', 'pb-2');
-                specItem.innerHTML = `
-                    <span class="text-sm font-medium text-gray-500">${spec.label}:</span>
-                    <span class="text-sm font-semibold text-gray-800">${spec.value}</span>
-                `;
-                specsContainer.appendChild(specItem);
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="font-semibold">${spec.label}:</span> ${spec.value}`;
+                specsList.appendChild(li);
             });
 
-            // Set link WhatsApp
-            const waLink = document.getElementById('modal-whatsapp-link');
-            const encodedProductName = encodeURIComponent(data.title);
-            waLink.href = `https://wa.me/6281557788168?text=Halo%20Max%20Printing%2C%20saya%20tertarik%20dengan%20produk%20${encodedProductName}%20dan%20ingin%20memesan.`;
+            // Update WhatsApp link dengan nama produk
+            const whatsappLink = document.querySelector('.modal a[href^="https://wa.me"]');
+            whatsappLink.href = `https://wa.me/6285157788168?text=Halo%20Max%20Printing%2C%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(data.title)}%20dan%20ingin%20tanya%20harga.%20Terima%20kasih.`;
 
             // Tampilkan modal
             modal.classList.add('open');
         }
 
-        // Fungsi untuk menutup modal
+        /**
+         * Menutup modal detail produk.
+         */
         function closeProductDetails() {
             document.getElementById('product-detail-modal').classList.remove('open');
         }
 
-        // --- Promo Popup Logic ---
+
+        // --- 3. Promo Popup Logic ---
+
+        /**
+         * Menampilkan popup promosi.
+         */
         function showPromo() {
             document.getElementById('promoPopup').classList.remove('hidden');
         }
 
+        /**
+         * Menutup popup promosi.
+         */
         function closePromo() {
             document.getElementById('promoPopup').classList.add('hidden');
         }
 
-        // --- Global Selectors ---
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIconOpen = document.getElementById('menu-icon-open');
-        const menuIconClose = document.getElementById('menu-icon-close');
+        // --- 4. Navigation & Mobile Menu Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            
+            if (menuToggle && mobileMenu && menuIconOpen && menuIconClose) {
+                menuToggle.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden', !isHidden);
+                    menuIconClose.classList.toggle('hidden', isHidden);
+                });
 
-        // ID input pencarian sesuai konvensi baru
-        const searchInputDesktop = document.getElementById('product-search-input-desktop');
-        const searchInputMobile = document.getElementById('product-search-input-mobile');
-
-        // --- Navigasi Mobile Logic ---
-        menuToggle.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.toggle('hidden');
-            // Toggle icons
-            menuIconOpen.classList.toggle('hidden', !isHidden);
-            menuIconClose.classList.toggle('hidden', isHidden);
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuIconOpen.classList.remove('hidden');
+                        menuIconClose.classList.add('hidden');
+                    });
+                });
+            }
         });
 
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                // Semua link sekarang akan menutup menu karena tombol "Pesan Sekarang" sudah dihapus
-                mobileMenu.classList.add('hidden');
-                menuIconOpen.classList.remove('hidden');
-                menuIconClose.classList.add('hidden');
-            });
-        });
-        // --- Akhir Navigasi Mobile Logic ---
 
-        // --- Google Map Embed Logic ---
-        
-        /**
-         * Mengambil string input (kode iframe) dan mengonversinya
-         * menjadi kode iframe yang valid untuk disematkan, memastikan responsif.
-         * @param {string} input - Kode iframe penuh.
-         * @returns {string|null} - Kode iframe yang responsif atau null jika gagal.
-         */
+        // --- 5. Google Map Embed Logic ---
+        // Ganti kode iframe placeholder ini dengan kode Google Maps asli Anda jika ingin berfungsi
+        const googleMapIframeCode = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.6718179340137!2d106.79492797499327!3d-6.5630441934301675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5002ed1f6c5%3A0xc6b51715c19aa55e!2sMax%20Printing%20-%20Bogor!5e0!3m2!1sid!2sid!4v1765720433323!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        const mapContainer = document.getElementById('map-container');
+
         const convertToIframe = (input) => {
             const trimmedInput = input.trim();
-            
-            // 1. Cek apakah input sudah berupa kode iframe lengkap
             const iframeMatch = trimmedInput.match(/<iframe[^>]*>[\s\S]*?<\/iframe>/i);
             if (iframeMatch) {
                 let iframe = iframeMatch[0];
-                // Atur properti iframe agar responsif dan bersih
-                // Hapus width/height bawaan jika ada, dan tambahkan border=0
                 iframe = iframe.replace(/width=".*?"/i, '');
                 iframe = iframe.replace(/height=".*?"/i, '');
                 iframe = iframe.replace(/style=".*?"/i, '');
-                
-                // Pastikan border=0 (sudah ada di CSS, tapi untuk jaga-jaga)
                 if (!/border="0"/i.test(iframe)) {
-                    iframe = iframe.replace(/>$/, ' border="0">');
+                    const srcMatch = iframe.match(/src="[^"]+"/i);
+                    if (srcMatch) {
+                        iframe = iframe.replace(srcMatch[0], `${srcMatch[0]} style="border:0;"`);
+                    } else {
+                        iframe = iframe.replace('>', ' style="border:0;">');
+                    }
                 }
-                // Wrap dalam div container untuk CSS kustom
+                iframe = iframe.replace(/frameborder=".*?"/i, '');
                 return iframe;
-            }
-
-            // 2. Jika hanya berupa URL (misalnya dari Google Maps Share Link), kita bisa coba format manual
-            const urlMatch = trimmedInput.match(/(https?:\/\/[^\s"]+)/i);
-            if (urlMatch) {
-                const url = urlMatch[0];
-                if (url.includes('maps/embed')) {
-                    return `<iframe src="${url}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-                }
             }
             return null;
         };
 
-        // Kode iframe Google Maps (Disimpan sebagai string murni untuk menghindari masalah HTML parsing saat inisialisasi)
-        // Ganti URL placeholder ini dengan embed code Google Maps Anda.
-        const googleMapIframeCode = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.023412704253!2d106.817342!3d-6.598688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5b2a0000001%3A0x1c3a6c52a0000002!2sMax%20Printing%20Bogor%20Pajajaran!5e0!3m2!1sid!2sid!4v1688566085123!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
-        
-        const mapContainer = document.getElementById('map-container');
-
         const loadMap = () => {
+            if (!mapContainer) return;
+
             const validIframe = convertToIframe(googleMapIframeCode);
+
             if (validIframe) {
                 mapContainer.innerHTML = validIframe;
                 mapContainer.classList.remove('justify-center', 'items-center');
@@ -1033,133 +873,118 @@
                 mapContainer.classList.add('justify-center', 'items-center');
             }
         };
-        // Inisialisasi: Muat peta saat halaman dimuat
-        loadMap();
 
-        // --- Akhir Google Map Embed Logic ---
+        // --- 6. Carousel Logic ---
+        const initCarousel = () => {
+            const slides = document.querySelectorAll('#slide-container .slide');
+            const dotsContainer = document.getElementById('carousel-dots');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            let currentSlide = 0;
+            let slideInterval;
+            const intervalTime = 5000; // 5 seconds
 
+            const showSlide = (n) => {
+                if (slides.length === 0) return;
 
-        // === Carousel Logic ===
-        const slides = document.querySelectorAll('#slide-container .slide');
-        const dotsContainer = document.getElementById('carousel-dots');
-        const prevButton = document.getElementById('prev-slide');
-        const nextButton = document.getElementById('next-slide');
-        let currentSlide = 0;
-        let slideInterval;
-        const intervalTime = 5000; // 5 seconds
+                if (n >= slides.length) {
+                    currentSlide = 0;
+                } else if (n < 0) {
+                    currentSlide = slides.length - 1;
+                } else {
+                    currentSlide = n;
+                }
 
-        // Fungsi untuk menampilkan slide tertentu
-        const showSlide = (n) => {
-            // Wrap around
-            if (n >= slides.length) {
-                currentSlide = 0;
-            } else if (n < 0) {
-                currentSlide = slides.length - 1;
-            } else {
-                currentSlide = n;
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.position = 'absolute';
+                });
+
+                slides[currentSlide].classList.add('active');
+                slides[currentSlide].style.position = 'relative';
+
+                updateDots();
+            };
+
+            const nextSlide = () => {
+                showSlide(currentSlide + 1);
+            };
+
+            const createDots = () => {
+                if (!dotsContainer) return;
+                dotsContainer.innerHTML = '';
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'bg-white', 'rounded-full', 'opacity-50', 'hover:opacity-100', 'transition', 'duration-300');
+                    dot.setAttribute('aria-label', `Pindah ke slide ${index + 1}`);
+                    dot.onclick = () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        startAutoSlide();
+                    };
+                    dotsContainer.appendChild(dot);
+                });
+            };
+
+            const updateDots = () => {
+                if (!dotsContainer) return;
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('opacity-100', index === currentSlide);
+                    dot.classList.toggle('opacity-50', index !== currentSlide);
+                });
+            };
+
+            const startAutoSlide = () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            };
+
+            if (slides.length > 0) {
+                createDots();
+                showSlide(0);
+                startAutoSlide();
+            }
+            
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(currentSlide - 1);
+                    startAutoSlide();
+                });
             }
 
-            // Hide all slides
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-                slide.style.position = 'absolute'; // Reset position for non-active slides
-            });
-
-            // Show the current slide
-            slides[currentSlide].classList.add('active');
-            slides[currentSlide].style.position = 'relative'; // Set position relative for active slide to maintain height
-
-            // Update dots
-            updateDots();
-        };
-
-        // Fungsi untuk pindah ke slide berikutnya
-        const nextSlide = () => {
-            showSlide(currentSlide + 1);
-        };
-
-        // Membuat indikator dots
-        const createDots = () => {
-            dotsContainer.innerHTML = ''; // Pastikan dotsContainer kosong sebelum diisi
-            slides.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white', 'opacity-50', 'hover:opacity-100', 'transition', 'duration-300');
-                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
-                dot.addEventListener('click', () => {
-                    showSlide(index);
-                    resetInterval();
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    nextSlide();
+                    startAutoSlide();
                 });
-                dotsContainer.appendChild(dot);
-            });
+            }
         };
 
-        // Memperbarui tampilan dots
-        const updateDots = () => {
-            const dots = dotsContainer.querySelectorAll('button');
-            dots.forEach((dot, index) => {
-                dot.classList.remove('opacity-100');
-                dot.classList.add('opacity-50');
-                if (index === currentSlide) {
-                    dot.classList.add('opacity-100');
-                }
-            });
-        };
-
-        // Memulai interval otomatis
-        const startInterval = () => {
-            slideInterval = setInterval(nextSlide, intervalTime);
-        };
-
-        // Mengatur ulang interval (misalnya setelah klik tombol manual)
-        const resetInterval = () => {
-            clearInterval(slideInterval);
-            startInterval();
-        };
-
-        // Event listeners
-        prevButton.addEventListener('click', () => {
-            showSlide(currentSlide - 1);
-            resetInterval();
-        });
-
-        nextButton.addEventListener('click', () => {
-            nextSlide();
-            resetInterval();
-        });
-
-        // Inisialisasi Carousel
-        if (slides.length > 0) {
-            createDots();
-            showSlide(currentSlide);
-            startInterval();
-        }
-        // === Akhir Carousel Logic ===
-
+        // --- 7. Search/Filter Logic ---
 
         /**
-         * Fungsi Pencarian Produk
-         * Menerapkan pencarian real-time pada semua produk dan kategori.
-         * @param {HTMLInputElement} inputElement - Elemen input (desktop atau mobile) yang memicu pencarian.
+         * Fungsi untuk menyaring produk berdasarkan input pencarian
+         * @param {HTMLInputElement} inputElement - elemen input yang memicu fungsi
          */
         function searchProducts(inputElement) {
-            // Ambil query dari elemen yang dipicu
             const query = inputElement.value.toLowerCase().trim();
 
-            // Tentukan ID input lainnya
+            // SINKRONISASI INPUT LAINNYA (INI SANGAT PENTING!)
             const otherInputId = inputElement.id === 'product-search-input-desktop' ? 'product-search-input-mobile' : 'product-search-input-desktop';
             const otherInput = document.getElementById(otherInputId);
-
-            // Sinkronkan input lainnya
             if (otherInput && otherInput.value.toLowerCase().trim() !== query) {
-                otherInput.value = query;
+                otherInput.value = query; // Pastikan nilai disinkronkan
             }
-
+            
             const categories = document.querySelectorAll('.product-category');
             const noResultsMessage = document.getElementById('no-results-message');
             let totalMatches = 0;
 
             if (query === '') {
-                // Jika query kosong, tampilkan semua produk dan kategori
+                // Tampilkan semua jika query kosong
                 categories.forEach(category => {
                     category.classList.remove('hidden-category');
                     category.querySelectorAll('.product-card-polaroid').forEach(product => {
@@ -1170,18 +995,15 @@
                 return;
             }
 
-            // Lakukan pencarian
+            // Proses filtering
             categories.forEach(category => {
                 let categoryMatches = 0;
-                const products = category.querySelectorAll('.product-card-polaroid');
-
-                products.forEach(product => {
-                    // Ambil kata kunci dari data-keywords, judul (h4), dan deskripsi (p)
+                
+                category.querySelectorAll('.product-card-polaroid').forEach(product => {
+                    // Gunakan semua data untuk pencarian
                     const keywords = product.dataset.keywords || '';
                     const title = product.querySelector('h4').textContent || '';
                     const description = product.querySelector('p').textContent || '';
-                    
-                    // Gabungkan semua teks untuk pencarian
                     const searchableText = `${title} ${description} ${keywords}`.toLowerCase();
 
                     if (searchableText.includes(query)) {
@@ -1193,7 +1015,7 @@
                     }
                 });
 
-                // Sembunyikan kategori jika tidak ada produk yang cocok
+                // Sembunyikan/tampilkan kategori
                 if (categoryMatches > 0) {
                     category.classList.remove('hidden-category');
                 } else {
@@ -1201,7 +1023,7 @@
                 }
             });
 
-            // Tampilkan atau sembunyikan pesan 'Produk tidak ditemukan'
+            // Tampilkan pesan "Tidak ditemukan"
             if (totalMatches === 0) {
                 noResultsMessage.classList.remove('hidden');
             } else {
@@ -1209,10 +1031,17 @@
             }
         }
 
-        // Tautkan fungsi pencarian ke input
-        searchInputDesktop.oninput = searchProducts;
-        searchInputMobile.oninput = searchProducts;
+        // --- 8. Initialize on DOM Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inisialisasi Carousel
+            initCarousel();
 
+            // Muat Peta Google
+            loadMap();
+
+            // PENTING: Fungsi pencarian sudah terlampir di HTML (oninput="searchProducts(this)")
+            // Block attachment JS yang sebelumnya menyebabkan konflik telah dihapus.
+        });
     </script>
 
 </body>
